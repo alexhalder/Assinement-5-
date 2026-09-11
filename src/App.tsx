@@ -3,6 +3,7 @@ import "./App.css";
 import Hero from "./component/Hero/Hero";
 import Nav from "./component/Nav";
 import Tech from "./component/Tech/Tech";
+import { ToastContainer } from "react-toastify";
 
 export const promise = async () => {
   const res = await fetch("/data.json");
@@ -15,9 +16,17 @@ function App() {
     <>
       <Nav />
       <Hero />
-      <Suspense fallback={<div>Loading...</div>}>
+
+      <Suspense
+        fallback={
+          <div className="flex min-h-[300px] items-center justify-center">
+            <span className="loading loading-bars loading-xl"></span>
+          </div>
+        }
+      >
         <Tech promise={promise()} />
       </Suspense>
+      <ToastContainer position="top-right" autoClose={2000} />
     </>
   );
 }
