@@ -5,7 +5,7 @@ import Nav from "./component/Nav";
 import Tech from "./component/Tech/Tech";
 
 export const promise = async () => {
-  const res = await fetch("../public/data.json");
+  const res = await fetch("/data.json");
   const data = await res.json();
   return data;
 };
