@@ -11,6 +11,7 @@ This is my 5th assignment where I built a simple React app. I tried to apply wha
 - JSON
 - Vite
 - DaisyUI
+- Google Fonts
 
 ### 3 Features about my project
 
@@ -40,11 +41,15 @@ When we render a list, React needs a way to identify each item. If we add, remov
 **6. What is conditional rendering? Show one place you used it (example: the empty stack message).**
 Conditional rendering means showing different things on the screen based on a condition (like an if/else statement). For example, I used it to show an empty message when there is no data:
 
-{myStack.length === 0 && (
-<div className="flex flex-col items-center justify-center gap-2 py-10 text-center border-2 border-slate-400 rounded-2xl border-dashed">
-<p className="text-sm text-slate-400 ">Your stack is empty!</p>
-</div>
-)}
+```tsx
+{
+  myStack.length === 0 && (
+    <div className="flex flex-col items-center justify-center gap-2 py-10 text-center border-2 border-slate-400 rounded-2xl border-dashed">
+      <p className="text-sm text-slate-400 ">Your stack is empty!</p>
+    </div>
+  );
+}
+```
 
 **7. How do you pass data from a parent component to a child component, and how does a child send something back to the parent?**
 To pass data to a child, we use props (like adding attributes to an HTML tag). To send data back up to the parent, the parent needs to send a function down as a prop. Then, the child can call that function and pass the data inside it, and the parent will receive it.
