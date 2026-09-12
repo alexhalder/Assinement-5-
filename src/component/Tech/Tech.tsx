@@ -67,8 +67,6 @@ const Tech = ({ promise }: iTechnologyProps) => {
       {/* mein layout add total 12*/}
       <div className="grid grid-cols-12 gap-6">
 
-        {/* title section */}
-
         <div className="col-span-12 lg:col-span-9">
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
             {data.map((item) => {
