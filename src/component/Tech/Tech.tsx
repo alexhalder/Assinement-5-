@@ -101,9 +101,8 @@ const Tech = ({ promise }: iTechnologyProps) => {
 
 
             {myStack.length === 0 && (
-              <div className="flex flex-col items-center justify-center gap-2 py-10 text-center">
-                <span className="text-3xl">🗂️</span>
-                <p className="text-sm text-slate-400">
+              <div className="flex flex-col items-center justify-center gap-2 py-10 text-center border-2 border-slate-400 rounded-2xl border-dashed">
+                <p className="text-sm text-slate-400 ">
                   Your stack is empty!
                 </p>
               </div>

@@ -9,8 +9,12 @@ interface iTechCardProps {
 
 const TechCard = ({ techProps, onAdd, isAdded }: iTechCardProps) => {
   return (
-    <div className="flex flex-col rounded-2xl border border-slate-200 bg-white p-5 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
-
+    <div
+      className={`flex flex-col rounded-2xl p-5 transition-all duration-200 ${isAdded
+        ? "border-2 border-pink-300 bg-orange-50 shadow-lg shadow-orange-100"
+        : "border border-slate-200 bg-white shadow-sm hover:shadow-md hover:-translate-y-0.5"
+        }`}
+    >
       <div className="flex items-start justify-between">
         <img src={techProps.icon} alt={techProps.name} className="h-10 w-10 object-contain" />
         <span className="rounded-full bg-orange-100 text-orange-600 px-2.5 py-0.5 text-xs font-semibold">
@@ -36,9 +40,14 @@ const TechCard = ({ techProps, onAdd, isAdded }: iTechCardProps) => {
         </span>
       </div>
 
-      <button onClick={() => onAdd(techProps)}
+      <button
+        onClick={() => onAdd(techProps)}
         disabled={isAdded}
-        className={isAdded ? "mt-4 w-full rounded-xl py-2 text-sm font-semibold bg-slate-100 text-slate-400 cursor-not-allowed" : "mt-4 w-full rounded-xl py-2 text-sm font-semibold bg-slate-900 text-white hover:bg-slate-700"}>
+        className={
+          isAdded
+            ? "mt-4 w-full rounded-xl py-2 text-sm font-semibold bg-orange-100 text-orange-500 cursor-not-allowed"
+            : "mt-4 w-full rounded-xl py-2 text-sm font-semibold bg-slate-900 text-white hover:bg-slate-700"
+        }>
         {isAdded ? "Added ✓" : "Add to Stack"}
       </button>
     </div>

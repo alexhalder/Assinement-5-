@@ -4,6 +4,7 @@ import Hero from "./component/Hero/Hero";
 import Nav from "./component/Nav";
 import Tech from "./component/Tech/Tech";
 import { ToastContainer } from "react-toastify";
+import Footer from "./component/Footer";
 
 export const promise = async () => {
   const res = await fetch("/data.json");
@@ -26,6 +27,8 @@ function App() {
       >
         <Tech promise={promise()} />
       </Suspense>
+
+      <Footer />
       <ToastContainer position="top-right" autoClose={2000} />
     </>
   );
