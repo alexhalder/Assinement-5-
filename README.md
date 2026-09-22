@@ -13,8 +13,6 @@ This is my 5th assignment where I built a simple React app. I tried to apply wha
 - DaisyUI
 - Google Fonts
 
-  --
-
 ### 3 Features about my project
 
 1. Shows a list of items dynamically on the screen.
